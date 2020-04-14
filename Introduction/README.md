@@ -54,5 +54,5 @@ BEGIN
 END
 ```
 The time as well as space complexity functions are constants:
-[x] Time complexity: O(1)
-[x] Space complexity: O(1)
+- [x] Time complexity: O(1)
+- [x] Space complexity: O(1)
