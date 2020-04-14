@@ -29,7 +29,7 @@ Introductory ideas, concepts and principles of Algorithms: `First design, then i
   - Hardware dependant
   - Watch time & memory in bytes
 
-## Characteristics of Algorihtms :
+## Characteristics of Algorithms :
 1. Input: 0 or more
 2. Output: at least 1
 3. Definiteness: Every statement should have one definite meaning(known steps)
