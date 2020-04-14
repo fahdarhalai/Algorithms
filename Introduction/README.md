@@ -89,5 +89,5 @@ Algorithm Multiply(A,B,n)
 	}
 }
 ```
-- [x] The time function is: `f(n) = 2n^3 + 3n² + 2n + 1`, which is of order `n^3`.
+- [x] The time function is: `f(n) = 2n<sup>3</sup> + 3n² + 2n + 1`, which is of order `n<sup>3</sup>`.
 - [x] The space complexity function: `S(n) = 3n² + 4` which is of order `n²`.
