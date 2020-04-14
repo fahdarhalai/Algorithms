@@ -57,7 +57,7 @@ The time & space complexity functions are constants:
 - [x] Space complexity: O(1)
 
 ## Frequency Count Method :
-*Example (1):* Sum the elements of an array of size `n`
+**Example (1):** Sum the elements of an array of size `n`
 ```
 Algorithm Sum(A, n)
 {
@@ -69,10 +69,10 @@ Algorithm Sum(A, n)
 	return S;		// Time: 1
 }
 ```
-- [x] The time function is: `f(n) = 1+(n+1)+n+1 = 2n+3`, which is of order `n`.
-- [x] The space complexity function: `S(n) = n+1+1+1 = n+3` which is of order `n`.
+- [x] The time function is: **f(n) = 2n+3**, which is of order n.
+- [x] The space complexity function: **S(n) = n+3** which is of order n.
 
-*Example (2):* Multiply two matrices of size `n`
+**Example (2):** Multiply two matrices of size `n`
 ```
 Algorithm Multiply(A,B,n)
 {
@@ -89,5 +89,5 @@ Algorithm Multiply(A,B,n)
 	}
 }
 ```
-- [x] The time function is: `f(n) = 2n<sup>3</sup> + 3n² + 2n + 1`, which is of order `n<sup>3</sup>`.
-- [x] The space complexity function: `S(n) = 3n² + 4` which is of order `n²`.
+- [x] The time function is: **f(n) = 2n<sup>3</sup> + 3n² + 2n + 1**, which is of order n<sup>3</sup>.
+- [x] The space complexity function: **S(n) = 3n² + 4** which is of order n².
