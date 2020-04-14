@@ -55,3 +55,21 @@ END
 The time as well as space complexity functions are constants:
 - [x] Time complexity: O(1)
 - [x] Space complexity: O(1)
+
+## Frequency Count Method :
+Example:
+```
+Algorithm Sum(A, n)
+{
+	S = 0;
+	for(i=0; i<n; i++)
+	{
+		S = S + A[i];
+	}
+	return S;
+}
+```
+For an array of size `n`, the initialization `S=0` is only executed once, the condition `i<n` in the `for loop` is evaluated to true `n` times, the `n+1` iteration is evaluated to false, thus the condition is evaluated `n+1` times. The statement within the for loop is executed `n` times, and finally the return statement is executed once.
+We conclude the time function: `f(n) = 1+(n+1)+n+1 = 2n+3`, which is of order `n`.
+Since the array is of size `n`, with the addition of 3 more variable used within the function, we conclude the space complexity function:
+`S(n) = n+1+1+1 = n+3` which is of order `n`.
