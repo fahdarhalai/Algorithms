@@ -30,18 +30,18 @@ Introductory ideas, concepts and principles of Algorithms: `First design, then i
   - Watch time & memory in bytes
 
 ## Characteristics of Algorihtms :
-1- Input: 0 or more
-2- Output: at least 1
-3- Definiteness: Every statement should have one definite meaning(known steps)
-4- Finiteness: It must stop, should have finite number of statements
-5- Effectiveness: Should not have unnecessary statements
+1. Input: 0 or more
+2. Output: at least 1
+3. Definiteness: Every statement should have one definite meaning(known steps)
+4. Finiteness: It must stop, should have finite number of statements
+5. Effectiveness: Should not have unnecessary statements
 
 ## How to analyse an Algorithm ?
-1- Time: How much time it takes to return a result
-2- Space: How much memory it consumes during the life time
-3- Network consumption (Case of cloud applications, programs that run over network ...)
-4- Power consumption
-5- CPU registers consumption
+1. Time: How much time it takes to return a result
+2. Space: How much memory it consumes during the life time
+3. Network consumption (Case of cloud applications, programs that run over network ...)
+4. Power consumption
+5. CPU registers consumption
 
 Example:
 ```
