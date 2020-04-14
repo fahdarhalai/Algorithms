@@ -1,6 +1,5 @@
 # Introduction to Algorithms
-Introductory ideas, concepts and princples of Algorithms.
-`First design, then implement`
+Introductory ideas, concepts and principles of Algorithms: `First design, then implement` :sunglasses:
 
 ## What is the difference between Algorithm & Program ?
 - Algorithm:
