@@ -1,4 +1,6 @@
-First design, then implement
+# Introduction to Algorithms
+Introductory ideas, concepts and princples of Algorithms.
+`First design, then implement`
 
 ## What is the difference between Algorithm & Program ?
 - Algorithm:
