@@ -107,3 +107,6 @@ if and only if there exists a real number M>0, and a real number x0 such that:<b
 6. O(2<sup>n</sup>)	Exponential
 
 **1 < log n < sqrt(n) < n < nlog n < n² < n<sup>3</sup> < 2<sup>n</sup> < n! < n<sup>n</sup>**
+<p align="center">
+	<img src="https://vaxxxa.github.io/talks/introduction.to.algorithms-computational.complexity/static/images/big-o-complexity.png" width="75%" />
+</p>
