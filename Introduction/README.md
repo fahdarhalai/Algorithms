@@ -106,4 +106,4 @@ if and only if there exists a real number M>0, and a real number x0 such that:<b
 5. O(n<sup>3</sup>)	Cubic
 6. O(2<sup>n</sup>)	Exponential
 
-**1 < log n < sqrt(n) < n < nlog n < n² < n<sup>3</sup> < 2<sup>n</sup> < n<sup>n</sup>**
+**1 < log n < sqrt(n) < n < nlog n < n² < n<sup>3</sup> < 2<sup>n</sup> < n! < n<sup>n</sup>**
