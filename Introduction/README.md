@@ -93,8 +93,9 @@ Algorithm Multiply(A,B,n)
 - [x] The space complexity function: **S(n) = 3n² + 4** which is of order n².
 
 ## Classes of functions :
-**Theorem:** Let `f` be a real or complex function, ``g` a real function, both defined on some unbounded subset of the real positive numbers, and ``g` stricly positive for large enough values.
-`f(x) = O(g(x)) as x ---> oo`, if and only if there exists a real number M>0, and a real number x0 such that;
+**Theorem:** Let `f` be a real or complex function, `g` a real function, both defined on some unbounded subset of the real positive numbers, and `g` stricly positive for large enough values. We write: <br>
+`f(x) = O(g(x)) as x ---> oo`<br>
+if and only if there exists a real number M>0, and a real number x0 such that:<br>
 `|f(x)| <= Mg(x) for all x >= x0`
 
 **Types of Time functions:**
