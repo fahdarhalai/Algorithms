@@ -93,11 +93,6 @@ Algorithm Multiply(A,B,n)
 - [x] The space complexity function: **S(n) = 3n² + 4** which is of order n².
 
 ## Classes of functions :
-**Theorem:** Let `f` be a real or complex function, `g` a real function, both defined on some unbounded subset of the real positive numbers, and `g` stricly positive for large enough values. We write: <br>
-`f(x) = O(g(x)) as x ---> oo`<br>
-if and only if there exists a real number M>0, and a real number x0 such that:<br>
-`|f(x)| <= Mg(x) for all x >= x0`
-
 **Types of Time functions:**
 1. O(1)		constant
 2. O(log n)	Logarithemic
@@ -110,3 +105,36 @@ if and only if there exists a real number M>0, and a real number x0 such that:<b
 <p align="center">
 	<img src="https://vaxxxa.github.io/talks/introduction.to.algorithms-computational.complexity/static/images/big-o-complexity.png" width="75%" />
 </p>
+
+## Asymptotic Notations :
+**Theorem: Big-Oh Notation**<br>Let **f** be a real or complex function, **f** a real function. We write: <br>
+```f(x) = O(g(x)) as x ---> oo```<br>
+if and only if there exists a real number M>0, and a real number x0 such that:<br>
+```|f(x)| ≤ Mg(x) for all x ≥ x0```<br>
+Big-Oh notation represents the upper bound of the function.
+
+	- Example: f(n) = 2n+3
+	f(n) = O(n), but also:
+	f(n) = O(nlogn)
+	f(n) = O(n²)
+
+**Theorem: Big Omega Notation**<br>Let **f** be a real or complex function, **g** a real function. We write: <br>
+```f(x) = Ω(g(x)) as x ---> oo```<br>
+if and only if there exists a real number C>0, and a real number x0 such that:<br>
+```|f(x)| => Cg(x) for all x ≥ x0```<br>
+Big Omega notation represents the lower bound of the function.
+
+	- Example: f(n) = 2n+3
+	f(n) = Ω(n), but also:
+	f(n) = Ω(logn)
+	f(n) = Ω(1)
+
+
+**Theorem: Theta Notation**<br>Let **f** be a real or complex function, **g** a real function. We write: <br>
+```f(x) = Θ(g(x)) as x ---> oo```<br>
+if and only if there exists constants C1, C2>0, and a real number x0 such that:<br>
+```C1g(x) ≤ f(x) ≤ C2g(x) for all x ≥ x0```<br>
+Theta notation represents the average bound of the function.
+
+	-Example: f(n) = 2n+3
+	f(n) = Θ(n) is the only answer.
