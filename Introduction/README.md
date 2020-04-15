@@ -91,3 +91,18 @@ Algorithm Multiply(A,B,n)
 ```
 - [x] The time function is: **f(n) = 2n<sup>3</sup> + 3n² + 2n + 1**, which is of order n<sup>3</sup>.
 - [x] The space complexity function: **S(n) = 3n² + 4** which is of order n².
+
+## Classes of functions :
+**Theorem:** Let `f` be a real or complex function, ``g` a real function, both defined on some unbounded subset of the real positive numbers, and ``g` stricly positive for large enough values.
+`f(x) = O(g(x)) as x ---> oo`, if and only if there exists a real number M>0, and a real number x0 such that;
+`|f(x)| <= Mg(x) for all x >= x0`
+
+**Types of Time functions:**
+1. O(1)		constant
+2. O(log n)	Logarithemic
+3. O(n)		Linear
+4. O(n²)	Quadratic
+5. O(n<sup>3</sup>)	Cubic
+6. O(2<sup>n</sup>)	Exponential
+
+```1 < log n < sqrt(n) < n < nlog n < n² < n<sup>3</sup> < 2<sup>n</sup> < n<sup>n</sup>```
