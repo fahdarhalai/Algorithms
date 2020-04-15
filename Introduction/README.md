@@ -107,7 +107,7 @@ Algorithm Multiply(A,B,n)
 </p>
 
 ## Asymptotic Notations :
-**Theorem: Big-Oh Notation**<br>Let **f** be a real or complex function, **f** a real function. We write: <br>
+**Theorem: Big-Oh Notation**<br>Let **f** be a real or complex function, **g** a real function. We write: <br>
 ```f(x) = O(g(x)) as x ---> oo```<br>
 if and only if there exists a real number M>0, and a real number x0 such that:<br>
 ```|f(x)| ≤ Mg(x) for all x ≥ x0```<br>
