@@ -22,7 +22,7 @@ BEGIN
   else
     P1, P2, P3, ... , Pk <-- divide(P);
     sub_solutions <-- Divide_And_Conquer(P1), Divide_And_Conquer(P2), ... , Divide_And_Conquer(Pk);
-    solution = combine(solutions);
+    solution <-- combine(solutions);
     return solution;
 END
 ```
