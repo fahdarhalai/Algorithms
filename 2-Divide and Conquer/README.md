@@ -59,7 +59,7 @@ For this particular problem, the number of recursive calls given an integer **n*
 f(n) = n + 1
 ```
 which is of complexity ```O(n)```.
-The time complexity of the example give defines the following recursive sequence:
+The time complexity of the example given defines the following recursive sequence:
 ```
         | 1           if n=0
  T(n) = |
