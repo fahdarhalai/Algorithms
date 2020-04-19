@@ -87,7 +87,7 @@ void Test(int n){             // T(n) time complexity
   }
 }
 ```
-Number of recurise calls or **Test** function:
+Number of recurise calls of **Test** function:
 ```
 f(n) = n + 1
 ``` 
