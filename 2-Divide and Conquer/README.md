@@ -106,8 +106,8 @@ which is O(n²).
 
 **Summary:**
 As the procedure of solving the time complexity of a recursive sequence become more clear, here is a summary of few of them (a,b are constant integers):
-- T(n) = T(n-a) + b            is O(n)
-- T(n) = T(n-a) + blogn        is O(nlogn)
-- T(n) = T(n-a) + bn           is O(n²)
-- T(n) = T(n-a) + bn²          is O(n<sup>3</sup>)
-- T(n) = 2T(n-1) + 1           is O(2<sup>n</sup>)
+- T(n) = T(n-a) + b &emsp;&ensp;&ensp;&emsp;&emsp;is O(n)
+- T(n) = T(n-a) + blogn &emsp;&emsp;is O(nlogn)
+- T(n) = T(n-a) + bn &emsp;&nbsp;&emsp;&emsp;is O(n²)
+- T(n) = T(n-a) + bn² &emsp;&emsp;&emsp;is O(n<sup>3</sup>)
+- T(n) = 2T(n-1) + 1 &emsp;&nbsp;&emsp;&emsp;is O(2<sup>n</sup>)
