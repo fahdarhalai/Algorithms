@@ -13,3 +13,4 @@ This repository will be a reference from my learning journey on algorithm design
     - [Asymptotic Notations](https://github.com/fahdarhalai/Algorithms/tree/master/1-Introduction#classes-of-functions-)
 2. [Divide and Conquer](https://github.com/fahdarhalai/Algorithms/tree/master/2-Divide%20and%20Conquer)
     - [General Approach](https://github.com/fahdarhalai/Algorithms/tree/master/2-Divide%20and%20Conquer#general-approach-)
+    - [Recurrence Relation](https://github.com/fahdarhalai/Algorithms/tree/master/2-Divide%20and%20Conquer#recurrence-relation-)
