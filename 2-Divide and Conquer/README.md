@@ -106,13 +106,13 @@ which is O(n²).
 
 **Summary:**
 As the procedure of solving the time complexity of a recursive sequence become more clear, here is a summary of few of them (a,b are constant integers):
-- T(n) = T(n-1) + 1 &emsp;&ensp;&ensp;&emsp;&emsp;is O(n)
+- T(n) = T(n-1) + 1 &emsp;&ensp;&emsp;&emsp;is O(n)
 - T(n) = T(n-1) + logn &emsp;&emsp;is O(nlogn)
 - T(n) = T(n-1) + n &emsp;&nbsp;&emsp;&emsp;is O(n²)
 - T(n) = T(n-1) + n² &emsp;&emsp;&emsp;is O(n<sup>3</sup>)
-- T(n) = 2T(n-1) + 1 &emsp;&nbsp;&emsp;&emsp;is O(2<sup>n</sup>)
-- T(n) = 3T(n-1) + 1 &emsp;&nbsp;&emsp;&emsp;is O(3<sup>n</sup>)
-- T(n) = 2T(n-1) + n &emsp;&nbsp;&emsp;&emsp;is O(n2<sup>n</sup>)
+- T(n) = 2T(n-1) + 1 &emsp;&emsp;&emsp;is O(2<sup>n</sup>)
+- T(n) = 3T(n-1) + 1 &emsp;&emsp;&emsp;is O(3<sup>n</sup>)
+- T(n) = 2T(n-1) + n &emsp;&emsp;&emsp;is O(n2<sup>n</sup>)
 
 ## Master Theorem for Decreasing Functions :
 
