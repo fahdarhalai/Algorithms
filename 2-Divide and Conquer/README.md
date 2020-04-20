@@ -114,5 +114,29 @@ As the procedure of solving the time complexity of a recursive sequence become m
 - T(n) = 3T(n-1) + 1 &emsp;&emsp;&emsp;is O(3<sup>n</sup>)
 - T(n) = 2T(n-1) + n &emsp;&emsp;&emsp;is O(n2<sup>n</sup>)
 
-## Master Theorem for Decreasing Functions :
+## Masters Theorem for Decreasing Functions :
+From the above summary, one can deduce a general formula for time complexity sequence as follows:
+```
+       | 1                if n=0
+T(n) = |
+       | aT(n-b) + f(n)   if n>0
+```
+where a,b are strictly positive real numbers, and **f(n)** is of order O(n<sup>k</sup>) where ```k≥0```.
+
+**demystification:**
+
+For ```n>0```, we have:<br>
+
+&emsp;T(n) = aT(n-b) + f(n)<br>
+&emsp;&emsp;&emsp;= a[aT(n-2b) + f(n)] + f(n)<br>
+&emsp;&emsp;&emsp;= a²T(n-2b) + af(n) + f(n)<br>
+&emsp;&emsp;&emsp;= a<sup>k</sup>T(n-kb) + a<sup>k-1</sup>f(n) + ... + af(n) + f(n) &emsp;&emsp;&emsp;&emsp;(for k>0)<br>
+
+Let ```k=n/b```, hence:<br>
+<p align="center"><b>T(n) = a<sup>n/b</sup> + a<sup>(n/b)-1</sup>f(n) + ... + af(n) + f(n)</b></p><br>
+
+**Theorem:** 
+- if ```a < 1```, then **T(n) ∈ O(f(n))**
+- if ```a = 1```, then **T(n) ∈ O(nf(n))**
+- if ```a > 1```, then **T(n) ∈ O(f(n)a<sup>n/b</sup>)**
 
