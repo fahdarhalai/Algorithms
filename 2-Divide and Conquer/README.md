@@ -114,7 +114,7 @@ As the procedure of solving the time complexity of a recursive sequence become m
 - T(n) = 3T(n-1) + 1 &emsp;&emsp;&emsp;is O(3<sup>n</sup>)
 - T(n) = 2T(n-1) + n &emsp;&emsp;&emsp;is O(n2<sup>n</sup>)
 
-## Masters Theorem for Decreasing Functions :
+## Master Theorem for Decreasing Functions :
 From the above summary, one can deduce a general formula for time complexity sequence as follows:
 ```
        | 1                if n=0
@@ -186,7 +186,7 @@ For n>1, we can write:<br>
 T(n) = n + nlogn<br>
 which is O(nlogn).
 
-## Masters Theorem for Dividing Functions :
+## Master Theorem for Dividing Functions :
 The general form of recurrence relation is:
 ```
       | 1                 if n=1
