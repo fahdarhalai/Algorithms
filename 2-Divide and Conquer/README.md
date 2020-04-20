@@ -33,7 +33,7 @@ END
 4. QuickSort
 5. Strassem's Matrix Multiplication
 
-## Recurrence Relation :
+## Recurrence Relation for Decreasing Functions :
 **Example:**
 ``` C
 void Test(int n){
@@ -140,3 +140,83 @@ Let ```k=n/b```, hence:<br>
 - if ```a = 1```, then **T(n) ∈ O(nf(n))**
 - if ```a > 1```, then **T(n) ∈ O(f(n)a<sup>n/b</sup>)**
 
+## Recurrence relation for Dividing Functions :
+**Example:**
+``` C
+void Test(int n){           // T(n) time complexity
+  if(n>1){                  // One unit of time
+    printf("%d", n);        // One unit of time
+    T(n/2);                 // T(n/2) time complexity
+  }
+}
+```
+We conclude the following recursion sequence:
+```
+      | 1               if n=1
+T(n) =| 
+      | T(n/2) + 1      if n>1
+```
+For n>1, we can write after developing the equation: <br>
+T(n) = T(n/2<sup>k</sup>) + k<br>
+if k = logn, then: <br>
+T(n) = T(1) + logn = 1 + logn<br>
+which is O(logn)
+
+**Example:**
+
+Let us study the following recursion:
+```
+      | 1               if n=1
+T(n) =| 
+      | T(n/2) + n      if n>1
+```
+For n>1, we can write:<br>
+T(n) = 1 + 2n(1-(0.5)<sup>logn</sup>)<br>
+which is O(n).
+
+**One more:**
+
+Take a look at this last one:
+```
+      | 1               if n=1
+T(n) =| 
+      | 2T(n/2) + n      if n>1
+```
+For n>1, we can write:<br>
+T(n) = n + nlogn<br>
+which is O(nlogn).
+
+## Masters Theorem for Dividing Functions :
+The general form of recurrence relation is:
+```
+      | 1                 if n=1
+T(n) =|
+      | aT(n/b) + f(n)    if n>1
+```
+where a≥1, b>1, and f(n) is of order O(n<sup>k</sup>log<sup>p</sup>n).
+
+**Theorem:**
+
+- if log<sub>b</sub>a > k, then O(n<sup>log<sub>b</sub>a</sup>)
+- if log<sub>b</sub>a = k, then
+  - if p > -1, then O(n<sup>k</sup>log<sup>p+1</sup>n)
+  - if p = -1, then O(n<sup>k</sup>loglogn)
+  - if p < -1, then O(n<sup>k</sup>)
+- if log<sub>b</sub>a < k, then
+  - if p ≥ 0, then O(n<sup>k</sup>log<sup>p</sup>n) 
+  - if p < 0, then O(n<sup>k</sup>)
+
+**Applying the theorem:**
+
+- Case 1:
+  - T(n) = 2T(n/2) + 1&nbsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;is O(n)
+  - T(n) = 4T(n/2) + n&nbsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;is O(n²)
+  - T(n) = 8T(n/2) + n²&nbsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;is O(n<sup>3</sup>)
+- Case 2:
+  - T(n) = T(n/2) + 1&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;&nbsp;is O(logn)
+  - T(n) = 4T(n/2) + (nlogn)²&emsp;&emsp;&nbsp;&nbsp;is O(n²log<sup>3</sup>n)
+  - T(n) = 2T(n/2) + n/log²n&emsp;&emsp;&nbsp;&nbsp;&nbsp;is O(n)
+- Case 3:
+  - T(n) = T(n/2) + n&nbsp;&nbsp;&nbsp;&emsp;&emsp;&emsp;&emsp;&emsp;is O(n)
+  - T(n) = 4T(n/2) + n<sup>3</sup>log²n&emsp;&emsp;&nbsp;&nbsp;is O(n<sup>3</sup>log²n)
+  - T(n) = 2T(n/2) + n²/logn&emsp;&emsp;&nbsp;&nbsp;is O(n²)
