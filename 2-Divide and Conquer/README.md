@@ -238,7 +238,7 @@ A = {3, 6, 8, 12, 14, 17, 25, 29, 31, 36, 42, 47, 53, 55, 62}
  - Else, we set the new lowest index as ```l = mid+1```.
  - We repeat the process (from second step), until we find the key, or the lowest index crosses the highest, which means that the key doesn't exist in the given array.
 
-Click [HERE]() to see a simple implementation for the Iterative Binary Search in C Language.
+Here is a simple implementation of the [Iterative Binary Search](https://github.com/fahdarhalai/Algorithms/blob/master/2-Divide%20and%20Conquer/BinarySearch.cpp#L5).
 
 Now Let's analyse the time complexity of the Iterative Binary Search. For that we can make use of the Binary Search tree representation to get a better visualization and comprehension.
 
