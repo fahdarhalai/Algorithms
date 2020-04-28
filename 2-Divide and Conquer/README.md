@@ -307,6 +307,7 @@ BEGIN
     return RecursiveBinarySearch(Array, L, H, Key)    // Complexity T(n/2)
   end
 ```
+Here is a simple implementation of the [Recursive Binary Search](https://github.com/fahdarhalai/Algorithms/blob/master/2-Divide%20and%20Conquer/BinarySearch.cpp#L27).<br>
 The recursion relation is given by:
 ```
        | 1             if n=1
