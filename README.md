@@ -17,3 +17,4 @@ This repository will be a reference from my learning journey on algorithm design
     - [Master Theorem for Decreasing Functions](https://github.com/fahdarhalai/Algorithms/tree/master/2-Divide%20and%20Conquer#master-theorem-for-decreasing-functions-)
     - [Recurrence relation for Dividing Functions](https://github.com/fahdarhalai/Algorithms/tree/master/2-Divide%20and%20Conquer#recurrence-relation-for-dividing-functions-)
     - [Master Theorem for Dividing Functions](https://github.com/fahdarhalai/Algorithms/tree/master/2-Divide%20and%20Conquer#master-theorem-for-dividing-functions-)
+    - [Binary Search](https://github.com/fahdarhalai/Algorithms/blob/master/2-Divide%20and%20Conquer/README.md#binary-search-)
