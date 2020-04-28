@@ -277,3 +277,40 @@ However in worst case, the algorithm will check all possible nodes (not all of t
 At each layer of the BST, only one node is picked, which brings us to conclude that the worst case is when the algorithm passes all layers picking one node at each. Since the height of a BST of **n** nodes is ```log(n)```, we conclude the time complexity of the iterative binary search is **O(log(n))**.
 
 #### Recursive Binary Search :
+Since Binary Search is a Divide & Conquer strategy, it is obvious that it can be solved using a recursive strategy, let's see how.
+
+ - First we check if the given array is of length 1, that is if the lowest index equals the highest index, if so, we return the index if it holds the searched key.
+ - If the array is not of length 1, we calculate the **mid** index ```mid = (l + h)/2```.
+ - If the searched key is less than the element at the **mid** index, we update the highest index to ```h = mid-1```, then perform a recursive call again.
+ - Else, we update the lowest index to ```l = mid+1```, then perform a recursive call again.
+
+The algorithm will run until it finds the key, unless it doesn't exist. For this strategy, it is better to write down the algorithm, then we generate the recursion relation.
+```
+Algorithm RecursiveBinarySearch(Array, L, H, Key)     // Complexity T(n)
+BEGIN
+  if L=H:                                             // One unit of time
+    if Array(L) = Key:                                // One unit of time
+      return L
+    else
+      return -1
+    end
+  else
+    MID <- (L + H)/2                                  // One unit of time
+    if Key = Array(MID):                              // One unit of time
+      return MID
+    end
+    if Key < Array(mid)                               // One unit of time
+      H <- MID - 1
+    else
+      L <- MID + 1
+    end
+    return RecursiveBinarySearch(Array, L, H, Key)    // Complexity T(n/2)
+  end
+```
+The recursion relation is given by:
+```
+       | 1             if n=1
+T(n) = |
+       | T(n/2) + 1    if n>1 
+```
+For ```n > 1```, we solve the recursion relation as we did before to eventually find ```T(n) = log(n)```.
