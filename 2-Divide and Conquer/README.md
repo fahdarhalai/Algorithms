@@ -243,7 +243,7 @@ Here is a simple implementation of the [Iterative Binary Search](https://github.
 Now Let's analyse the time complexity of the Iterative Binary Search. For that we can make use of the Binary Search tree representation to get a better visualization and comprehension.
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/41004675/80542745-21504180-899d-11ea-826a-0c6881dce7e9.png" width="75%"/>
+  <img src="https://user-images.githubusercontent.com/41004675/80546180-85c2cf00-89a4-11ea-8731-e6dc50aa73fb.png" width="75%"/>
 </p>
 
 This image represents how the Binary Search algorithm travels aross the elements of the given array, it maps the **mid** index to a tree node. If you didn't see it yet, let's take the first iteration:
