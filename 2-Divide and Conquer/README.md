@@ -227,7 +227,7 @@ Binary Search is Divide & Conquer strategy which searches for a key in a given a
 **NOTE**:
 Binary search requires the input array to be sorted. It has two approaches, the iterative approach, and the recursive approach.
 
-#### Iterative Binary Search :
+#### 1. Iterative Binary Search :
 Let's consider an input array of size ```n = 15```:<br>
 A = {3, 6, 8, 12, 14, 17, 25, 29, 31, 36, 42, 47, 53, 55, 62}
 
@@ -276,7 +276,7 @@ However in worst case, the algorithm will check all possible nodes (not all of t
 
 At each layer of the BST, only one node is picked, which brings us to conclude that the worst case is when the algorithm passes all layers picking one node at each. Since the height of a BST of **n** nodes is ```log(n)```, we conclude the time complexity of the iterative binary search is **O(log(n))**.
 
-#### Recursive Binary Search :
+#### 2. Recursive Binary Search :
 Since Binary Search is a Divide & Conquer strategy, it is obvious that it can be solved using a recursive strategy, let's see how.
 
  - First we check if the given array is of length 1, that is if the lowest index equals the highest index, if so, we return the index if it holds the searched key.
