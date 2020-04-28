@@ -220,3 +220,60 @@ where a≥1, b>1, and f(n) is of order O(n<sup>k</sup>log<sup>p</sup>n).
   - T(n) = T(n/2) + n&nbsp;&nbsp;&nbsp;&emsp;&emsp;&emsp;&emsp;&emsp;is O(n)
   - T(n) = 4T(n/2) + n<sup>3</sup>log²n&emsp;&emsp;&nbsp;&nbsp;is O(n<sup>3</sup>log²n)
   - T(n) = 2T(n/2) + n²/logn&emsp;&emsp;&nbsp;&nbsp;is O(n²)
+
+## Binary Search :
+Binary Search is Divide & Conquer strategy which searches for a key in a given array of size **n**. We already know that the linear search is of order O(n) in worst case, and O(1) in best case, let's see how well Binary Search does.
+
+**NOTE**:
+Binary search requires the input array to be sorted. It has two approaches, the iterative approach, and the recursive approach.
+
+#### Iterative Binary Search :
+Let's consider an input array of size ```n = 15```:<br>
+A = {3, 6, 8, 12, 14, 17, 25, 29, 31, 36, 42, 47, 53, 55, 62}
+
+ - First we set the lowest index to zero ```l = 1```, and the highest index to the size of the array ```h = n```.
+ - Next, we calculate the mid index ```mid = (l + h)/2```.
+ - We check if the key we are looking for, equals the element at index **mid**, if so, we return the **mid** index.
+ - Else, we check if the the key is less than the element at index **mid**, if so, we set the new highest index as ```h = mid-1```.
+ - Else, we set the new lowest index as ```l = mid+1```.
+ - We repeat the process (from second step), until we find the key, or the lowest index crosses the highest, which means that the key doesn't exist in the given array.
+
+Click [HERE]() to see a simple implementation for the Iterative Binary Search in C Language.
+
+Now Let's analyse the time complexity of the Iterative Binary Search. For that we can make use of the Binary Search tree representation to get a better visualization and comprehension.
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/41004675/80542745-21504180-899d-11ea-826a-0c6881dce7e9.png" width="75%"/>
+</p>
+
+This image represents how the Binary Search algorithm travels aross the elements of the given array, it maps the **mid** index to a tree node. If you didn't see it yet, let's take the first iteration:
+```
+l = 1
+h = 15
+mid = (1+15)/2 = 8
+```
+The mid is then the first index the algorithm picks (or the root of the binary search tree). In the second iteration we have two possibilites depending on the searched key, either to teh left of the array like so:
+
+```
+l = 1
+h = mid-1 = 8-1 = 7
+mid = (1 + 7)/2 = 4 
+```
+
+Or to the right of the array like so:
+
+```
+l = mid+1 = 8+1 = 9
+h = 15
+mid = (9 + 15)/2 = 12
+```
+
+In both cases we successfully generate the second layer of the BST, which corresponds to two nodes, one with value 4, the other with value 12. Now you have a better understanding of how this works. Let's now continue the complexity analysis of the algorithm.
+
+In case the searched key lays at the first calculated **mid** index (or the root of the BST), the algorithm is at its best case which is of complexity **O(1)**.
+
+However in worst case, the algorithm will check all possible nodes (not all of them), that is for each time, it will choose to go to the left or to the right of the BST, until it reaches the bottom layer (AKA. the height of the tree).
+
+At each layer of the BST, only one node is picked, which brings us to conclude that the worst case is when the algorithm passes all layers picking one node at each. Since the height of a BST of **n** nodes is ```log(n)```, we conclude the time complexity of the iterative binary search is **O(log(n))**.
+
+#### Recursive Binary Search :
