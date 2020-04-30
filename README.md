@@ -18,3 +18,4 @@ This repository will be a reference from my learning journey on algorithm design
     - [Recurrence relation for Dividing Functions](https://github.com/fahdarhalai/Algorithms/tree/master/2-Divide%20and%20Conquer#recurrence-relation-for-dividing-functions-)
     - [Master Theorem for Dividing Functions](https://github.com/fahdarhalai/Algorithms/tree/master/2-Divide%20and%20Conquer#master-theorem-for-dividing-functions-)
     - [Binary Search](https://github.com/fahdarhalai/Algorithms/blob/master/2-Divide%20and%20Conquer/README.md#binary-search-)
+    - [Merge Sort](https://github.com/fahdarhalai/Algorithms/blob/master/2-Divide%20and%20Conquer/README.md#merge-sort-)
