@@ -306,6 +306,7 @@ BEGIN
     end
     return RecursiveBinarySearch(Array, L, H, Key)    // Complexity T(n/2)
   end
+END
 ```
 Here is a simple implementation of the [Recursive Binary Search](https://github.com/fahdarhalai/Algorithms/blob/master/2-Divide%20and%20Conquer/BinarySearch.cpp#L27).<br>
 The recursion relation is given by:
@@ -315,3 +316,93 @@ T(n) = |
        | T(n/2) + 1    if n>1 
 ```
 For ```n > 1```, we solve the recursion relation as we did before to eventually find ```T(n) = log(n)```.
+
+## Merge Sort :
+Having two sorted arrays, we wish to merge them into one sorted array. Let's write the algorithm for MergeSort of two input arrays:
+```
+Algorithm Merge(A, B, m, n)
+BEGIN
+  i=1, j=1, k=1
+  
+  while i<=m and j<=n:
+    if A(i) < B(j):
+      C(k++) = A(i++)
+    else
+      C(k++) = B(j++)
+    end
+  end
+  
+  while i<=m:
+    C(k++) = A(i++)
+  end
+  
+  while j<=n:
+    C(k++) = B(j++)
+  end
+END
+```
+This algorithm is called Two-way MergeSort, since it merges two arrays. Generally, if we wish to merge **M** sorted arrays, we would use a M-way MergeSort.
+
+The idea behind M-way MergeSort, is to merge arrays two by two to form one sorted array at the end.
+
+The Merge algorithm merges two arrays of size **n** and **m**. The overall time complexity is **O(n+m)**.
+
+**Example**:
+
+We wish to sort the following array of integers:<br>
+A = {9, 3, 7, 5, 6, 4, 8, 2}<br>
+We can use 2-way MergeSort, by considering at first that each element of the array is a separate array. We then merge two elements at a time to get the following:
+```
+Merge({9}, {3}) => {3, 9}
+Merge({7}, {5}) => {5, 7}
+Merge({6}, {4}) => {4, 6}
+Merge({8}, {2}) => {2, 8}
+```
+Next step, is to perform 2-way MergeSort on the new 4 arrays:
+```
+Merge({3, 9}, {5, 7}) => {3, 5, 7, 9}
+Merge({4, 6}, {2, 8}) => {2, 4, 6, 8}
+```
+Last step, is to perform 2-way MergeSort on the new 2 arrays:
+```
+Merge({3, 5, 7, 9}, {2, 4, 6, 8}) = {2, 3, 4, 5, 6, 7, 8, 9}
+```
+Now we have a single sorted array by using 2-way MergeSort.
+
+Given an array of size **n**, at each step of merging, we perform **n** merges. The number of steps is log<sub>2</sub>(n). Finally, the 2-way MergeSort algorithm has a time complexity of **O(nlog(n))**.
+
+So far, we have seen how 2-way MergeSort works, it's time now to introduce the recursive algorithm of MergeSort which follows a Divide & Conquer strategy. We first write the algorithm and analyze it afterwards.
+```
+Algorithm MergeSort(low, high)  // T(n) time complexity
+BEGIN
+  if low < high:
+    mid = (low+high)/2          // One unit of time 
+    MergeSort(low, mid)         // T(n/2) time complexity
+    MergeSort(mid+1, high)      // T(n/2) time complexity
+    Merge(low, mid, high)       // n units of time 
+  end
+END
+```
+The MergeSort algorithm splits an array of size **n** into small arrays recursively, until it reaches one element in an array (low=high), then it starts 2-way MergeSort.
+The recurrence relation is given by:
+```
+      | 1               if n = 1
+T(n) =|
+      | 2T(n/2) + n     if n > 1
+```
+Using Master's theorem for dividing functions, we get:
+```
+T(n) ∈ O(nlog(n))
+```
+**Pros:**
+
+  - Large size list
+  - Suited for linked lists
+  - Stable in case of duplicates (Preserves the order)
+  
+**Cons:**
+
+  - Space Complexity O(n)
+  - Slower for small lists (Can be solved with the help of Insertion Sort for small problems)
+  - Recursive (Uses stack memory) O(log(n))
+
