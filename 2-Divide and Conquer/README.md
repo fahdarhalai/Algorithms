@@ -347,6 +347,8 @@ The idea behind M-way MergeSort, is to merge arrays two by two to form one sorte
 
 The Merge algorithm merges two arrays of size **n** and **m**. The overall time complexity is **O(n+m)**.
 
+Here is an implementation of the [2-way Merge](https://github.com/fahdarhalai/Algorithms/blob/master/2-Divide%20and%20Conquer/MergeSort.cpp#L4) algorithm in C language. 
+
 **Example**:
 
 We wish to sort the following array of integers:<br>
@@ -394,6 +396,8 @@ Using Master's theorem for dividing functions, we get:
 ```
 T(n) ∈ O(nlog(n))
 ```
+Here is an implementation of the [MergeSort](https://github.com/fahdarhalai/Algorithms/blob/master/2-Divide%20and%20Conquer/MergeSort.cpp#L29) algorithm in C language. 
+
 **Pros:**
 
   - Large size list
