@@ -436,6 +436,7 @@ BEGIN
   return j
 END
 ```
+Here is an implementation of the [Partition algorithm](https://github.com/fahdarhalai/Algorithms/blob/master/2-Divide%20and%20Conquer/QuickSort.cpp#L11).
 
 The algorithm for QuickSort is:
 ```
@@ -447,6 +448,8 @@ BEGIN
     QuickSort(A, j+1, h);       // T(n/2)
 END  
 ```
+Here is an implementation of the [QuickSort algorithm](https://github.com/fahdarhalai/Algorithms/blob/master/2-Divide%20and%20Conquer/QuickSort.cpp#L35).
+
 Now, let's analyze the QuickSort algorithm time complexity. For the sake of simplicity, we assume the partitioning is done everytime at the middle. Thus, at each recursive level, the size of the array is reduced by time. The total number of recursive levels is such that **n = 2<sup>k</sup>**, yields **k = log<sub>2</sub>n**.
 
 In fact, the total number of recursive levels is the height of a binary tree, to understand that, we suppose an array of 15 elements. We perform partitioning on the entire array (1 to 15). In the next level we perform partitioning on the sub-arrays (1 to 7) and (9 to 15) assuming the 8<sup>th</sup> element is the position of the pivot. The following figure illustrates the rest of the process.
@@ -554,3 +557,5 @@ T(n) =|
       | 7T(n/2) + n²      if n > 2
 ```
 Using Master's theorem, we find **T(n) ∈ O(n<sup>log<sub>2</sub>(n)</sup>)** which is approximately **O(n<sup>2.81</sup>)**.
+
+Here is an implementation of the [Strassen's Matrix Multiplication algorithm](https://github.com/fahdarhalai/Algorithms/blob/master/2-Divide%20and%20Conquer/StrassenMatrixMultiplication.cpp#L77).
