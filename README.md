@@ -21,3 +21,4 @@ This repository will be a reference from my learning journey on algorithm design
     - [Merge Sort](https://github.com/fahdarhalai/Algorithms/blob/master/2-Divide%20and%20Conquer/README.md#merge-sort-)
     - [QuickSort](https://github.com/fahdarhalai/Algorithms/tree/master/2-Divide%20and%20Conquer#quicksort-)
     - [Strassen's Matrix Multiplication](https://github.com/fahdarhalai/Algorithms/tree/master/2-Divide%20and%20Conquer#strassens-matrix-multiplication-)
+3. [Greedy Method](https://github.com/fahdarhalai/Algorithms/tree/master/3-Greedy%20Method)
