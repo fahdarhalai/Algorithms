@@ -1,5 +1,6 @@
 # Algorithms : Design, Analysis &  Implementation
-This repository contains a documentation of my learning journey on algorithm design and modeling, complexity analysis, with real-world examples. I will go through the process of implementation using most of the times the C/C++ language.<br>
+This repository contains a documentation of my learning journey on algorithm design and modeling, complexity analysis, with real-world examples. I will go through the process of implementation using most of the times the C/C++ language.
+
 **LET'S GO!** :sunglasses: :muscle:
 
 ## PLAN :
