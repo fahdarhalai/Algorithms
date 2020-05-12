@@ -410,3 +410,147 @@ Here is an implementation of the [MergeSort](https://github.com/fahdarhalai/Algo
   - Slower for small lists (Can be solved with the help of Insertion Sort for small problems)
   - Recursive (Uses stack memory) O(log(n))
 
+## QuickSort :
+The idea behind QuickSort algorithm, is to take an element of the array aka the pivot, and find its position such that all the elements in the LHS are smaller than the pivot, and all the elements in the RHS are greater.
+
+**NOTE:** In this lesson we will be using the first element of the array as the pivot.
+
+Once the pivot is choosen, we use a partitioning algorithm to find the right position of the pivot, as well as putting all smaller elements to the left, and all greater elements to right.
+
+Here is the algorithm for partitioning:
+```
+Algorithm Partition(A, l, h)
+BEGIN
+  pivot <- A(l), i <- l, j <- h
+  
+  while i<j then:
+    while true:
+      i <- i+1
+      if A(i) ≤ pivot then break
+    while true:
+      j <- j-1
+      if A(j) ≥ pivot then break
+    if i < j then swap(A(i), A(j))
+  
+  swap(A(l), A(j))
+  return j
+END
+```
+
+The algorithm for QuickSort is:
+```
+Algorithm QuickSort(A, l, h)    // T(n)
+BEGIN
+  if l < h then:
+    j <- Partition(A, l, h)     // n
+    QuickSort(A, l, j);         // T(n/2)
+    QuickSort(A, j+1, h);       // T(n/2)
+END  
+```
+Now, let's analyze the QuickSort algorithm time complexity. For the sake of simplicity, we assume the partitioning is done everytime at the middle. Thus, at each recursive level, the size of the array is reduced by time. The total number of recursive levels is such that **n = 2<sup>k</sup>**, yields **k = log<sub>2</sub>n**.
+
+In fact, the total number of recursive levels is the height of a binary tree, to understand that, we suppose an array of 15 elements. We perform partitioning on the entire array (1 to 15). In the next level we perform partitioning on the sub-arrays (1 to 7) and (9 to 15) assuming the 8<sup>th</sup> element is the position of the pivot. The following figure illustrates the rest of the process.
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/41004675/81623304-b2360c80-93e2-11ea-9806-afdc477eb004.png" width="75%"/>
+</p>
+
+Each partitioning is linear in time, hence, the time complexity of each level is of order of **n**.
+Knowing that we have **log(n)** levels, we conclude that the time complexity of the QuickSort algorithm is **O(nlog(n))** which is the average time complexity of the algorithm.
+
+The recurrence relation is:
+```
+      | 1               if n=1
+T(n) =|
+      | 2*T(n/2) + n    if n>1
+```
+Solving for ```n>1```, gives **O(nlog(n))**.
+
+**NOTE:** If the array is already sorted, and the selected pivot is the first element of the array, the tree would have a height of **n** and the time complexity is **O(n²)**. To solve this problem we select the pivot at the middle of the array, or at a random position.
+
+The space complexity of the QuickSort depends on the height of the tree.
+
+## Strassens Matrix Multiplication :
+Strassens Matrix Multiplication is faster than the naive Matrix Multiplication which is O(n<sup>3</sup>). But still slower than Coppersmith Winograd Algorithm.
+
+The Divide & Conquer strategy consist of deviding the matrix into sub-matrices and treat them as being elements of the matrix, which helps reduce the dimension of the matrix.
+
+Let's take the following 4x4 matrix **A**:
+```
+|a11 a12 a13 a14|
+|a21 a22 a23 a24|
+|a31 a32 a33 a34|
+|a41 a42 a43 a44|
+```
+This will become a 2x2 matrix as follows:
+```
+|A11 A12|
+|A21 A22|
+```
+where A11, A12, A21, A22 are the 2x2 matrices. If the original matrix becomes a 2x2 matrix, then we say the problem is small and we solve it by the naive matrix multiplication.
+
+Considering another 4x4 matrix **B**, the multiplication C = AxB will result in a 2x2 matrix C where:
+```
+C11 = A11*B11 + A12*B21
+C12 = A11*B12 + A12*B22
+C21 = A21*B11 + A22*B21
+C22 = A21*B12 + A22*B22
+```
+where the multiplication and sum operations above are defined in the set of matrices.
+
+**NOTE:** Let A be a square Matrix of order n, if no integer **k** satisfies **n = 2<sup>k</sup>**, then we fill the missing rows and columns with zeros.
+
+The algorithm for Matrix Multiplication of nxn matrices A and B is:
+```
+Algorithm MM(A, B, n)                              // T(n)
+BEGIN
+  if n = 2 then:                                    // 1
+    C11 = a11*b11 + a12*b21                         // 1
+    C12 = a11*b12 + a12*b22                         // 1
+    C21 = a21*b11 + a22*b21                         // 1
+    C22 = a21*b12 + a22*b22                         // 1
+  else:
+    C11 = MM(A11, B11, n/2) + MM(A12, B21, n/2)   // 2*T(n/2) + (n/2)²
+    C12 = MM(A11, B12, n/2) + MM(A12, B22, n/2)   // 2*T(n/2) + (n/2)²
+    C21 = MM(A21, B11, n/2) + MM(A22, B21, n/2)   // 2*T(n/2) + (n/2)²
+    C22 = MM(A21, B12, n/2) + MM(A22, B22, n/2)   // 2*T(n/2) + (n/2)²
+    
+  return C
+END
+```
+The recurrence relation for the above Matrix Multiplication algorithm is:
+```
+      | 1                   if n ≤ 2
+T(n) =|
+      | 8*T(n/2) + n²       if n > 2
+```
+Solving the recurrence relation using Master's theorem for dividing functions yields **T(n) ∈ O(n<sup>3</sup>)**.
+
+The Divide & Conquer strategy still gives the same time complexity as linear approach. Let's see Strassen's improvements to the Divide & Conquer strategy which helped reduce the time complexity.
+
+Strassen (A German Mathematician) noticed that the time complexity is mostly affected by the number of multiplications in the following formulas:
+```
+C11 = A11*B11 + A12*B21
+C12 = A11*B12 + A12*B22
+C21 = A21*B11 + A22*B21
+C22 = A21*B12 + A22*B22
+```
+He proceded by reducing the number of multiplications from 8 to 7, but the little improvement will result in more additional sum and substruct operations.
+
+Strassen suggested to calculate the new matrices:
+<p>
+  <img src="https://user-images.githubusercontent.com/41004675/81629517-da2d6c00-93f2-11ea-80d4-97d152b7cb3c.png" />
+</p>
+
+Using the above matrices we calculate the four sub matrices of the **C** as follows:
+<p>
+  <img src="https://user-images.githubusercontent.com/41004675/81629618-13fe7280-93f3-11ea-8696-c6c4d7c66453.png" />
+</p>
+
+Strassen's algorithm has reduced the number of multiplications, resulting in a faster algorithm. The recurrence relation for Strassen's Matrix Multiplication is:
+```
+      | 1                 if n ≤ 2
+T(n) =|
+      | 7T(n/2) + n²      if n > 2
+```
+Using Master's theorem, we find **T(n) ∈ O(n<sup>log<sub>2</sub>(n)</sup>)** which is approximately **O(n<sup>2.81</sup>)**.
