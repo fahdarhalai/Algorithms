@@ -473,8 +473,8 @@ Solving for ```n>1```, gives **O(nlog(n))**.
 
 The space complexity of the QuickSort depends on the height of the tree.
 
-## Strassens Matrix Multiplication :
-Strassens Matrix Multiplication is faster than the naive Matrix Multiplication which is O(n<sup>3</sup>). But still slower than Coppersmith Winograd Algorithm.
+## Strassen's Matrix Multiplication :
+Strassen's Matrix Multiplication is faster than the naive Matrix Multiplication which is O(n<sup>3</sup>). But still slower than Coppersmith Winograd Algorithm.
 
 The Divide & Conquer strategy consist of deviding the matrix into sub-matrices and treat them as being elements of the matrix, which helps reduce the dimension of the matrix.
 
