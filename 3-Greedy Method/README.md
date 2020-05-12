@@ -4,6 +4,10 @@ Just like Divide & Conquer strategy, Greedy Method is also a strategy or approac
 ## General Approach :
 The category of problems which require a Greedy strategy, are **optimization problems**, these are problems that require minimizing or maximizing a function.
 
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/41004675/81754142-eeca3c80-94a4-11ea-8501-1cbb38d99b20.jpg" width="75%" />
+</p>
+
 Consider the problem **P** for traveling from a point **A** to **B**. One can say, the solution is to walk from A to B, or to ride a bike, or to drive a car, or to take the train ...etc.
 
 However, add a constraint to the problem **P**, can make the set of solutions stricter. Such constraints can be on the duration of travel which will most likely exclude traveling by walking or riding the bike. However, traveling by flight or train, are reasonable solutions, those solutions are said to be **Feasible**.
