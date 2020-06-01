@@ -172,4 +172,4 @@ Algorithm FractionalKnapsack(A, P, W, n, capacity):
   
   return total_weight
 ```
-Here is an implementation for the [Fractional Knapsack Problem]().
+Here is an implementation for the [Fractional Knapsack Problem](https://github.com/fahdarhalai/Algorithms/blob/master/3-Greedy%20Method/FractionalKnapsack.cpp#L22).
