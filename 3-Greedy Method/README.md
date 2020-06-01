@@ -154,17 +154,22 @@ Algorithm FractionalKnapsack(A, P, W, n, capacity):
    
   sort T in decreasing order and reflect changes to A, P and W
  
-  total := 0
+  total_weight := 0
   for i ≤ n:
-    if(total < capacity):
-      w := 0
-      while(w < W[i]):
-        total := total + T[i]
+    w := 0
+    while(w < W[i]):
+      if(total < capacity):
+        total_weight := total_weight + 1
         w := w + 1
+      else:
+        break
       end
+    end
+    if(total_weight < capacity):
+      break
     end
   end
   
-  return total
+  return total_weight
 ```
 Here is an implementation for the [Fractional Knapsack Problem]().
