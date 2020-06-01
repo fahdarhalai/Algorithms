@@ -76,8 +76,9 @@ We wish to find the perfect combination of objects, so that the total profit is 
 
 **NOTE:** There are two types of Knapsack Problem:</br>
   * 0-1 Knapsack: The object should either be taken as whole, or left (eg. 1Kg ingot gold).
-  * Fractional Knapsack: A small portion of the object can be selected (eg. Vegetables)</br>.
-  The 0-1 Knapsack cannot be solved using Greedy Method, so we are going to focus on Fractional Knapsack.
+  * Fractional Knapsack: A small portion of the object can be selected (eg. Vegetables).
+
+The 0-1 Knapsack cannot be solved using Greedy Method, so we are going to focus on Fractional Knapsack.
 
 The formulation of the problem is as follows:
 
