@@ -10,7 +10,7 @@ The category of problems which require a Greedy strategy, are **optimization pro
 
 Consider the problem **P** for traveling from a point **A** to **B**. One can say, the solution is to walk from A to B, or to ride a bike, or to drive a car, or to take the train ...etc.
 
-However, add a constraint to the problem **P**, can make the set of solutions stricter. Such constraints can be on the duration of travel which will most likely exclude traveling by walking or riding the bike. However, traveling by flight or train, are reasonable solutions, those solutions are said to be **Feasible**.
+However, adding a constraint to the problem **P**, can make the set of solutions stricter. Such constraints can be on the duration of travel which will most likely exclude traveling by walking or riding the bike. However, traveling by flight or train, are reasonable solutions, those solutions are said to be **Feasible**.
 
 Now let's say, we wish to travel with minimum cost. From the set of feasible solutions, there will be always one solution which satisfies all the constraints and the additional minimization condition, this solution is said to be **Optimal**.
 
@@ -27,3 +27,144 @@ BEGIN
 END
 ```
 where **A** is an input of size **n**.
+
+## Knapsack Problem :
+The problem consist of a knapsack of total capacity W (total weight), and **N** objects, each one is having a profit and a weight as follows:
+<table>
+  <tr>
+    <td>objects</td>
+    <td>1</td>
+    <td>2</td>
+    <td>3</td>
+    <td>4</td>
+    <td>5</td>
+    <td>6</td>
+    <td>7</td>
+    <td>8</td>
+    <td>9</td>
+    <td>10</td>
+  </tr>
+  <tr>
+    <td>profits</td>
+    <td>p1</td>
+    <td>p2</td>
+    <td>p3</td>
+    <td>p4</td>
+    <td>p5</td>
+    <td>p6</td>
+    <td>p7</td>
+    <td>p8</td>
+    <td>p9</td>
+    <td>p10</td>
+  </tr>
+  <tr>
+    <td>weights</td>
+    <td>w1</td>
+    <td>w2</td>
+    <td>w3</td>
+    <td>w4</td>
+    <td>w5</td>
+    <td>w6</td>
+    <td>w7</td>
+    <td>w8</td>
+    <td>w9</td>
+    <td>w10</td>
+  </tr>
+</table>
+
+We wish to find the perfect combination of objects, so that the total profit is maximized while the total weight doesn't exceed a certain value being the constraint.
+
+**NOTE:** There are two types of Knapsack Problem:</br>
+  * 0-1 Knapsack: The object should either be taken as whole, or left (eg. 1Kg ingot gold).
+  * Fractional Knapsack: A small portion of the object can be selected (eg. Vegetables)</br>.
+  The 0-1 Knapsack cannot be solved using Greedy Method, so we are going to focus on Fractional Knapsack.
+
+The formulation of the problem is as follows:
+
+Maximize ∑p<sub>i</sub>x<sub>i</sub><br>
+Subject to ∑p<sub>i</sub>x<sub>i</sub> ≤ W
+
+To solve the problem we must add a new row to the table with additional information being the profit per unit weight of each object. We obtain the following results:
+<table>
+  <tr>
+    <td>Object</td>
+    <td>1</td>
+    <td>2</td>
+    <td>3</td>
+    <td>4</td>
+    <td>5</td>
+    <td>6</td>
+    <td>7</td>
+    <td>8</td>
+    <td>9</td>
+    <td>10</td>
+  </tr>
+  <tr>
+    <td>Profit</td>
+    <td>p1</td>
+    <td>p2</td>
+    <td>p3</td>
+    <td>p4</td>
+    <td>p5</td>
+    <td>p6</td>
+    <td>p7</td>
+    <td>p8</td>
+    <td>p9</td>
+    <td>p10</td>
+  </tr>
+  <tr>
+    <td>Weight</td>
+    <td>w1</td>
+    <td>w2</td>
+    <td>w3</td>
+    <td>w4</td>
+    <td>w5</td>
+    <td>w6</td>
+    <td>w7</td>
+    <td>w8</td>
+    <td>w9</td>
+    <td>w10</td>
+  </tr>
+  <tr>
+    <td>P/W</td>
+    <td>p1/w1</td>
+    <td>p2/w2</td>
+    <td>p3/w3</td>
+    <td>p4/w4</td>
+    <td>p5/w5</td>
+    <td>p6/w6</td>
+    <td>p7/w7</td>
+    <td>p8/w8</td>
+    <td>p9/w9</td>
+    <td>p10/w10</td>
+  </tr>
+</table>
+
+Next, we begin by adding to the knapsack, objects with higher **P/W** values until there is no more, we keep selecting in decreasing order until we reach the total capacity of the knapsack. This method ensures that the total profit is going to be optimal.
+
+Here is the algorithm for the Fractional Knapsack:
+```
+Algorithm FractionalKnapsack(A, P, W, n, capacity):
+  initialize T of size n
+  
+  for i ≤ n:
+    T[i] := P[i]/W[i]
+    i := i + 1
+  end
+   
+  sort T in decreasing order and reflect changes to A, P and W
+ 
+  total := 0
+  for i ≤ n:
+    if(total < capacity):
+      w := 0
+      while(w < W[i]):
+        total := total + T[i]
+        w := w + 1
+      end
+    end
+  end
+  
+  return total
+```
+Here is an implementation for the [Fractional Knapsack Problem]().
