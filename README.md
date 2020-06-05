@@ -26,3 +26,4 @@ This repository contains a documentation of my learning journey on algorithm des
     - [General Approach](https://github.com/fahdarhalai/Algorithms/blob/master/3-Greedy%20Method/README.md#general-approach-)
     - [Knapsack Problem](https://github.com/fahdarhalai/Algorithms/tree/master/3-Greedy%20Method#knapsack-problem-)
     - [Job Sequencing with Deadlines](https://github.com/fahdarhalai/Algorithms/tree/master/3-Greedy%20Method#job-sequencing-with-deadlines)
+    - [Optimal Merge Pattern](https://github.com/fahdarhalai/Algorithms/tree/master/3-Greedy%20Method#optimal-merge-pattern-)
