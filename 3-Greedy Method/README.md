@@ -240,4 +240,4 @@ Algorithm JobSequencing(J, P, D, n):
   end
 end
 ```
-Here is and implementation of the [Job Sequencing Algorithm]().
+Here is and implementation of the [Job Sequencing Algorithm](https://github.com/fahdarhalai/Algorithms/blob/master/3-Greedy%20Method/JobSequencing.cpp#L60).
