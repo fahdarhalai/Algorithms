@@ -123,7 +123,7 @@ int main(){
 	printf("- ALL JOBS :\n");
 	Display(jobs, n);
 	
-	printf("\n- JOB SCHEDULING :\n");
+	printf("\n- JOB SEQUENCING :\n");
 	Job *sequence = JobSequencing(jobs, n);
 	Display(sequence, max_deadline(jobs, n));
 	printf("\n=>Total Profit: %d\n", TotalProfit(sequence, max_deadline(jobs, n)));
