@@ -174,3 +174,70 @@ Algorithm FractionalKnapsack(A, P, W, n, capacity):
   return total_weight
 ```
 Here is an implementation for the [Fractional Knapsack Problem](https://github.com/fahdarhalai/Algorithms/blob/master/3-Greedy%20Method/FractionalKnapsack.cpp#L22).
+
+## Job Sequencing with Deadlines:
+Let's look at the following jobs :
+<table>
+  <tr>
+    <td>Jobs</td>
+    <td>J1</td>
+    <td>J2</td>
+    <td>J3</td>
+    <td>J4</td>
+    <td>J5</td>
+  </tr>
+  <tr>
+    <td>Profits</td>
+    <td>20</td>
+    <td>15</td>
+    <td>10</td>
+    <td>5</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>Deadlines</td>
+    <td>2</td>
+    <td>2</td>
+    <td>1</td>
+    <td>3</td>
+    <td>3</td>
+  </tr>
+</table>
+
+Assuming our machine, executes each job in **1 unit** of time. The deadline gives information about the maximum time we can wait before completing the job.
+
+In order to solve the problem using Greedy Method, we need to define the function to be optimized, as well as the constraints. For this one, the function to optimize is the total profits function (needs to be maximized). The total time **T** needed for processing all possible jobs is directly related to the maximum deadline M in our list of jobs, and the relationships is expressed as ```T ≤ M```.
+
+In our example, **T** is unknown, but **M**=4, this means all the jobs that could be executed, should be executed within the time interval **[0,4]**:
+```
+0 ------ 1 ------ 2 ------ 3 ------ 4
+```
+(For instance, if we execute **J1** first, then it should go between **[0,1]** time slot.)
+
+Solving the problem is done in the following steps:
+1. Sort the jobs by profit in decreasing order
+2. Select first job (with deadline d1) and insert it in the time slot **[d1-1,d1]**
+3. Select next job (with deadline d), insert it in time slot **[d-1,d]** if it's empty, otherwise insert it in the first empty time slot found before **[d-1,d]** (if found).
+4. Repeat step (3) for all time slots in the order mentioned.
+
+The above steps can also be written as a general algorithm as follows:
+```
+Algorithm JobSequencing(J, P, D, n):
+  R <- Empty sequence solution list of 
+  Sort(P) and reflect the new order onto J and D
+  foreach (j, p, d) in (J, P, D):
+    if R[d-1] is empty:
+      Add j in R at position (d-1)
+    else:
+      i <- (d-2)
+      while i ≥	0:
+        if R[i] is empty:
+          Add j in R at position i
+          break
+        decrement(i)
+      end
+    end
+  end
+end
+```
+Here is and implementation of the [Job Sequencing Algorithm]().
