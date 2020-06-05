@@ -241,3 +241,37 @@ Algorithm JobSequencing(J, P, D, n):
 end
 ```
 Here is and implementation of the [Job Sequencing Algorithm](https://github.com/fahdarhalai/Algorithms/blob/master/3-Greedy%20Method/JobSequencing.cpp#L60).
+
+## Optimal Merge Pattern :
+The Optimal Merge Pattern is about selecting the right order of merging arrays in order to minimize the total cost which is the time complexity of the merge.
+
+Suppose we have 4 arrays of integers, the algorithm requires them to be sorted first. We proceed in the following steps:
+1. Pull two arrays of minimum size (n, m) from the list of unmerged arrays and perform a merge which generates new array of size (n+m).
+2. Add the generated array to the list of unmerged arrays.
+3. Repeat step (1) or return if there is only one array left.
+
+**Complexity Analysis:** If A is an array of size **n**, and B an array of size **m**. Then the merged array will cost **n+m** operations.
+
+The algorithm for Optimal Merge Pattern is about finding the exact pattern for which the total sum of costs of all merge operations, is optimal(minimal). Here is the pseudo-algorithm:
+```
+Algorithm OptimalMerge(Arrays, N):
+  i <- 0
+  // First, order the arrays in increasing order of size
+  while i ≤ N:
+    j <- (i+1)
+    foreach j ≤ N:
+      if size(Arrays[i]) > size(Arrays[j]):
+        permute(A[i], A[j])
+      j <- (j+1)
+    end
+    i <- (i+1)
+  end
+  // Optimal Merge Pattern
+  while size(Arrays) > 1:
+    A <- pull(Arrays)
+    B <- pull(Arrays)
+    C <- merge(A, B)
+    Add C to Arrays in order 
+end
+```
+Here is an implementation of the [Optimal Merge Pattern]().
