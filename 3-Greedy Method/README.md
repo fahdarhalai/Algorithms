@@ -274,4 +274,4 @@ Algorithm OptimalMerge(Arrays, N):
     Add C to Arrays in order 
 end
 ```
-Here is an implementation of the [Optimal Merge Pattern]().
+Here is an implementation of the [Optimal Merge Pattern](https://github.com/fahdarhalai/Algorithms/blob/master/3-Greedy%20Method/OptimalMergePattern.cpp#L51).
