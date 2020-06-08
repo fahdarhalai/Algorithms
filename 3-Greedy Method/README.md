@@ -275,3 +275,127 @@ Algorithm OptimalMerge(Arrays, N):
 end
 ```
 Here is an implementation of the [Optimal Merge Pattern](https://github.com/fahdarhalai/Algorithms/blob/master/3-Greedy%20Method/OptimalMergePattern.cpp#L51).
+
+## Huffman Coding :
+Huffman Coding is a compression technique used to reduce the size of data. Let's consider the following message:
+```
+BCCABBDDAECCBBAEDDCC
+```
+The message is of length 20, and the character encoding used is ASCII where each character is 8-bit size. Hence the total size of our message is *8x20 = 160 bits*.
+
+The idea behinde Huffman Coding is that, in our case, we didn't use all possible ASCII characters, thus, we do not need 8bits representation for each character in our message, we define it ourselves instead.
+
+**1. Fixed Size Huffman Coding:**
+
+Our message has 5 different characters (A, B, C, D, E), so we only need 3 bits to represent all of them. Take a look at the following table:
+
+<table>
+  <tr>
+    <th>Character</th>
+    <th>Count</th>
+    <th>Code</th>
+  </tr>
+  
+  <tr>
+    <td>A</td>
+    <td>3</td>
+    <td>000</td>
+  </tr>
+  
+  <tr>
+    <td>B</td>
+    <td>5</td>
+    <td>001</td>
+  </tr>
+  
+  <tr>
+    <td>C</td>
+    <td>6</td>
+    <td>010</td>
+  </tr>
+  
+  <tr>
+    <td>D</td>
+    <td>4</td>
+    <td>011</td>
+  </tr>
+  
+  <tr>
+    <td>E</td>
+    <td>2</td>
+    <td>100</td>
+  </tr>
+</table>
+
+The **Count** column is the count of the character in the whole message, and the **Code** column is an arbitrary 3-bits representation of the character(No rules for this one).
+
+The total size of our message is reduced to *3x20 = 60 bits*. However, we need to save the encoding table for decoding as well. The **Character** column, is stored in ASCII code (8-bits), while the **Code** column is 3-bits. This makes the table of *5x8 + 5x3 = 55 bits*. If we ever need to send the message we would send the table as well, this makes a total of *60+55 = 115* bits length.
+
+Compared to the original size (160 bits), the message was compressed to 72% of its initial size.
+
+**2. Variable Size Huffman Coding:**
+
+Huffman says that if the characters have different frequencies in the message, their binary representation should not be of the same length. Characters with higher frequencies should have small binary representation than those with lower frequencies.
+
+Huffman used Optimal Merge Pattern to determine the optimal binary representation of each character. We begin by sorting the characters by their count in ascending order, we merge everytime two characters with the minimal size. We build the tree, and we give the left edges a value of **0**, and the right edges a value of **1**.
+```
+
+              (20) 
+              /  \
+             /    \
+            /      \
+         0 /        \
+          /          \ 1
+         /            \
+        (9)            \
+     0 /  \             \
+      /    \             \
+    (5)     \ 1          (11)
+    / \      \           /  \
+ 0 /   \ 1    \       0 /    \ 1
+  /     \      \       /      \
+E(2)   A(3)   D(4)   B(5)    C(6)
+```
+The binary representation of a leaf in the tree, is the sequence of 0's and 1's from the root of the tree down to the leaf. Here is the encoding table:
+
+<table>
+  <tr>
+    <th>Character</th>
+    <th>Count</th>
+    <th>Code</th>
+  </tr>
+  
+  <tr>
+    <td>A</td>
+    <td>3</td>
+    <td>001</td>
+  </tr>
+  
+  <tr>
+    <td>B</td>
+    <td>5</td>
+    <td>10</td>
+  </tr>
+  
+  <tr>
+    <td>C</td>
+    <td>6</td>
+    <td>11</td>
+  </tr>
+  
+  <tr>
+    <td>D</td>
+    <td>4</td>
+    <td>01</td>
+  </tr>
+  
+  <tr>
+    <td>E</td>
+    <td>2</td>
+    <td>000</td>
+  </tr>
+</table>
+
+*Notice that characters with higher frequencies are given only two bits representation, this will cause an important reduction of the size of our message.*
+
+According to the table, the total size of the message is *45 bits*. The size of the table is *52 bits*. If we want to send the message, we only need to send *45+52 = 97 bits*. The message (160 bits) has been compressed to *60%* of its original size.
