@@ -417,7 +417,6 @@ As u can see, each spanning tree connects all vertices without forming a cycle, 
 Prims and Kruskals algorithms are two different ways for finding an MST of a connected graph. What is common between them, is the Greedy aspect. *If you want a quick refresh on the key aspect of Greedy Methods, it consist of making a choice at the beginning, then, at each step, select the most beneficial choice among all possible choices.*
 
 ### Prims Algorithm:
-
 Prims Algorithm is as follows:
   1. Select the edge with minimum cost.
   2. Select the next minimum cost edge that connects to one of the vertices already added, such that it doesn't form a cycle.
@@ -427,7 +426,6 @@ Prims Algorithm is as follows:
 <h6 align="center"><b>The figure shows two possible MST's</b></h6>
 
 ### Kruskals Algorithm:
-
 Kruskals Algorithm is as follows:
   1. Select the edge with minimum cost.
   2. Select next minimum cost edge, such that it doesn't form a cycle.
@@ -437,3 +435,64 @@ Kruskals Algorithm is as follows:
 <h6 align="center"><b>The figure shows one possible MST (Don't make a cycle)</b></h6>
 
 *You might be in a situation where the next minimum edge does not connect to any of the verticies already visited, that's fine, just keep going.*
+
+## Dijkstra Algorithm :
+Dijkstra Algorithm is a greedy method for finding shortest path from a single source to all other vertices in directed or undirected graph.
+
+The key idea is to find the path cost to all vertices step by step starting from a single source. Let's take the following example where vertex (1) is the starting vertex:
+
+<p align="center"><img src="https://user-images.githubusercontent.com/41004675/84148391-d5da8a00-aa56-11ea-8f1b-342297f536dc.png" /></p>
+
+<table>
+  <tr>
+    <th>Selected</th>
+    <th>2</th>
+    <th>3</th>
+    <th>4</th>
+    <th>5</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>∞</td>
+    <td>6</td>
+    <td>3</td>
+    <td>∞</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>4</td>
+    <td>4</td>
+    <td>3</td>
+    <td>∞</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>4</td>
+    <td>4</td>
+    <td>3</td>
+    <td>∞</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>4</td>
+    <td>4</td>
+    <td>3</td>
+    <td>∞</td>
+  </tr>
+</table>
+
+The table shows that, at each step, we select the vertex with minimum path cost, we perform **relaxation** on other vertices, if there is no direct path the cost is set to infinity(∞).
+
+**Relaxation** is the act of updating the path cost to other direct vertices. Here is the algorithm of Relaxation of vertex *v* from vertex *u*:
+```
+if distance(u) + cost(u,v) < distance(v):
+  distance(v) := distance(u) + cost(u,v)
+```
+
+Dijkstra Algorithm follows the following steps:
+  1. From a source vertex set the cost path of all vertices, if there is no direct path, set it to infinity.
+  2. Perform relaxation on direct vertices that has not been selected.
+  3. Choose an unselected vertex with shortest path.
+  4. Repeat (2) until all vertices are selected.
+
+
