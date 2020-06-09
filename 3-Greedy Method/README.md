@@ -339,7 +339,6 @@ Huffman says that if the characters have different frequencies in the message, t
 
 Huffman used Optimal Merge Pattern to determine the optimal binary representation of each character. We begin by sorting the characters by their count in ascending order, we merge everytime two characters with the minimal size. We build the tree, and we give the left edges a value of **0**, and the right edges a value of **1**.
 ```
-
               (20) 
               /  \
              /    \
@@ -399,3 +398,42 @@ The binary representation of a leaf in the tree, is the sequence of 0's and 1's 
 *Notice that characters with higher frequencies are given only two bits representation, this will cause an important reduction of the size of our message.*
 
 According to the table, the total size of the message is *45 bits*. The size of the table is *52 bits*. If we want to send the message, we only need to send *45+52 = 97 bits*. The message (160 bits) has been compressed to *60%* of its original size.
+
+## Prims and Kruskals Algorithms :
+Before we dive deep in Prims and Kruskals Algorithms, let's remind ourselves of a very interesting graph structure called the **Spanning Tree**.
+
+**Spanning tree** is a tree that connects all the vertices of a connected graph without forming a cycle. Let's take a look at the following graph:
+
+<p align="center"><img src="https://user-images.githubusercontent.com/41004675/84086510-f9162280-a9df-11ea-9911-23996944dd3b.png" /></p>
+
+There are many different Spanning Trees of that graph, here are some possible ones:
+
+<p align="center"><img src="https://user-images.githubusercontent.com/41004675/84086514-fadfe600-a9df-11ea-8172-610f83cb67e7.png" /></p>
+
+As u can see, each spanning tree connects all vertices without forming a cycle, but they have different overall cost. Now let's move on to the next level; What are **Minimum Spanning Trees** ?
+
+**Minimum Spanning Tree (MST)** is a spanning tree with the minimum cost. They are extremely useful in real world problems (e.g. Cable networking, piping...). There might be different MST configurations for a graph but they should all have the same cost, the minimum.
+
+Prims and Kruskals algorithms are two different ways for finding an MST of a connected graph. What is common between them, is the Greedy aspect. *If you want a quick refresh on the key aspect of Greedy Methods, it consist of making a choice at the beginning, then, at each step, select the most beneficial choice among all possible choices.*
+
+### Prims Algorithm:
+
+Prims Algorithm is as follows:
+  1. Select the edge with minimum cost.
+  2. Select the next minimum cost edge that connects to one of the vertices already added, such that it doesn't form a cycle.
+  3. Repeat (2) until all vertices are visited.
+
+<p align="center"><img src="https://user-images.githubusercontent.com/41004675/84091107-71ceac00-a9eb-11ea-93e2-0340a19d4256.png" width="75%"/></p>
+<h6 align="center"><b>The figure shows two possible MST's</b></h6>
+
+### Kruskals Algorithm:
+
+Kruskals Algorithm is as follows:
+  1. Select the edge with minimum cost.
+  2. Select next minimum cost edge, such that it doesn't form a cycle.
+  3. Repeat (2) until all vertices are visited.
+
+<p align="center"><img src="https://user-images.githubusercontent.com/41004675/84091905-c5da9000-a9ed-11ea-8357-c61ca47258ce.png" width="75%" /></p>
+<h6 align="center"><b>The figure shows one possible MST (Don't make a cycle)</b></h6>
+
+*You might be in a situation where the next minimum edge does not connect to any of the verticies already visited, that's fine, just keep going.*
