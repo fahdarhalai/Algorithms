@@ -27,4 +27,6 @@ This repository contains a documentation of my learning journey on algorithm des
     - [Knapsack Problem](https://github.com/fahdarhalai/Algorithms/tree/master/3-Greedy%20Method#knapsack-problem-)
     - [Job Sequencing with Deadlines](https://github.com/fahdarhalai/Algorithms/tree/master/3-Greedy%20Method#job-sequencing-with-deadlines)
     - [Optimal Merge Pattern](https://github.com/fahdarhalai/Algorithms/tree/master/3-Greedy%20Method#optimal-merge-pattern-)
-    - [Huffman Coding](https://github.com/fahdarhalai/Algorithms/blob/master/3-Greedy%20Method/README.md)
+    - [Huffman Coding](https://github.com/fahdarhalai/Algorithms/blob/master/3-Greedy%20Method/README.md#huffman-coding-)
+    - [Prims & Kruskals Algorithms](https://github.com/fahdarhalai/Algorithms/blob/master/3-Greedy%20Method/README.md#prims-and-kruskals-algorithms-)
+    - [Dijkstra Algorithm](https://github.com/fahdarhalai/Algorithms/blob/master/3-Greedy%20Method/README.md#dijkstra-algorithm-)
